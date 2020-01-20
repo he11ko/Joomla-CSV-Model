@@ -38,7 +38,7 @@ class CoursebookModelCsv extends JModelAdmin
     		while (($data = fgetcsv($handle, 1000, "\n")) !== FALSE) {
 		        foreach ($data as $str){
 		        	if(!empty($str)){
-		        		$question = explode("{", $str)[0].'{}'.explode("}", $str)[1]; // TODO красивее сделать!
+		        		$question = explode("{", $str)[0].'{}'.explode("}", $str)[1];
 		        		$answer = explode("}",explode("=", $str)[1])[0];
 
 		        		$values[] = '"'.$question.'","'.$answer.'", "'.$category.'", 1';
